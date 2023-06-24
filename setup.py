@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # coding:utf-8
-# Author: ASU --<andrei.suiu@gmail.com>
-# Purpose: 
-# Created: 12/1/2015
 import os
 import sys
 from os.path import join
@@ -11,7 +8,7 @@ from shutil import copy, rmtree
 __author__ = 'ASU'
 
 # Bump up this version
-VERSION = '1.15.0'
+VERSION = '1.0.2'
 
 from setuptools import setup
 from setuptools.command.install import install
@@ -34,10 +31,7 @@ src_dir = join(basedir, 'py' + pyMajorVersion, 'pyxtension')
 for fname in [f for f in os.listdir(src_dir) if f.endswith(".py")]:
     copy(join(src_dir, fname), dest_package_dir)
 
-# ToDo: check if there's still BUG in twine, as if falsely reports in README.md
-#  line 34: Error: Unexpected indentation.
-
-long_description = open('README.rst', "rt").read()
+long_description = open('README.md', "rt").read()
 
 with open("requirements.txt") as fp:
     install_requires = fp.read().strip().split("\n")
@@ -82,14 +76,14 @@ class BdistWheelCommand(bdist_wheel, object):
         return python, abi, plat
 
 
-parameters = dict(name='pyxtension',
+parameters = dict(name='roys-pyxtension',
                   version=VERSION,
-                  description='Extension library for Python',
+                  description='Extension library for Python, forked from https://github.com/asuiu/pyxtension',
                   long_description=long_description,
                   long_description_content_type="text/markdown",
-                  author='Andrei Suiu',
-                  author_email='andrei.suiu@gmail.com',
-                  url='https://github.com/asuiu/pyxtension',
+                  author='Roy Manigley',
+                  author_email='roy.manigley@gmail.com',
+                  url='https://github.com/roymanigley/streamerate',
                   packages=['pyxtension'],
                   python_requires=python_requires,
                   install_requires=install_requires,

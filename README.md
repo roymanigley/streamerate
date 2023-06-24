@@ -1,8 +1,8 @@
 # pyxtension
-[![build Status](https://travis-ci.org/asuiu/pyxtension.svg?branch=master)](https://travis-ci.org/asuiu/pyxtension)
-[![Coverage Status](https://coveralls.io/repos/asuiu/pyxtension/badge.svg?branch=master&service=github)](https://coveralls.io/github/asuiu/pyxtension?branch=master)
+[![build Status](https://travis-ci.org/roymanigley/roys-pyxtension.svg?branch=master)](https://travis-ci.org/roymanigley/roys-pyxtension)
+[![Coverage Status](https://coveralls.io/repos/roymanigley/roys-pyxtension/badge.svg?branch=master&service=github)](https://coveralls.io/github/roymanigley/roys-pyxtension?branch=master)
 
-[pyxtension](https://github.com/asuiu/pyxtension) is a pure Python MIT-licensed library that includes Scala-like streams (using [Fluent Interface pattern](https://en.wikipedia.org/wiki/Fluent_interface)), Json with attribute access syntax, and other common-use stuff.
+[pyxtension](https://github.com/roymanigley/roys-pyxtension) is a pure Python MIT-licensed library that includes Scala-like streams (using [Fluent Interface pattern](https://en.wikipedia.org/wiki/Fluent_interface)), Json with attribute access syntax, and other common-use stuff.
 
 ###### Note:
 
@@ -14,17 +14,17 @@ Starting with [`1.13.0`](https://pypi.org/project/pyxtension/1.13.0/) I've migra
       
 ## Installation
 ```
-pip install pyxtension
+pip install roys-pyxtension
 ```
 or from Github:
 ```
-git clone https://github.com/asuiu/pyxtension.git
-cd pyxtension
+git clone https://github.com/roymanigley/roys-pyxtension.git
+cd roy-pyxtension
 python setup.py install
 ```
 or
 ```
-git submodule add https://github.com/asuiu/pyxtension.git
+git submodule add https://github.com/roymanigley/roys-pyxtension.git
 ```
 
 ## Modules overview
@@ -63,7 +63,7 @@ body.query.filtered.filter.term.created_by = 'ASU'
 Used to create stream processing pipelines, similar to those used in [Scala](http://www.scala-lang.org/) and [MapReduce](https://en.wikipedia.org/wiki/MapReduce) programming model.
 Those who used [Apache Spark](http://spark.apache.org/) [RDD](http://spark.apache.org/docs/latest/programming-guide.html#rdd-operations) functions will find this model of processing very easy to use.
 
-### [streams](https://github.com/asuiu/pyxtension/blob/master/streams.py)
+### [streams](https://github.com/roymanigley/roys-pyxtension/blob/master/streams.py)
 **Never again will you have to write code like this**:
 ```python
 > lst = xrange(1,6)
@@ -98,6 +98,14 @@ word_counts = stream(corpus).\
 ```
 
 #### Basic methods
+###### **on_next(f)**
+The passed function does return None but returns a stream
+
+
+###### **for_each(f)**
+The passed function will proceed all elements passed in the by the stream but returns None
+
+
 ###### **map(f)**
 Identic with builtin `map` but returns a stream
 
@@ -352,9 +360,9 @@ Inherits `streams.stream` and built-in `dict`, and keeps in memory the dict obje
 Inherits `streams.sdict` and adds functionality  of `collections.defaultdict` from stdlib
 
 
-### [Json](https://github.com/asuiu/pyxtension/blob/master/Json.py)
+### [Json](https://github.com/roymanigley/roys-pyxtension/blob/master/Json.py)
 
-[Json](https://github.com/asuiu/pyxtension/blob/master/Json.py) is a module that provides mapping objects that allow their elements to be accessed both as keys and as attributes:
+[Json](https://github.com/roymanigley/roys-pyxtension/blob/master/Json.py) is a module that provides mapping objects that allow their elements to be accessed both as keys and as attributes:
 ```python
     > from pyxtension.Json import Json
     > a = Json({'foo': 'bar'})
@@ -485,7 +493,7 @@ TypeError: object is immutable
 
 ### License
 pyxtension is released under a GNU Public license.
-The idea for [Json](https://github.com/asuiu/pyxtension/blob/master/Json.py) module was inspired from [addict](https://github.com/mewwts/addict) and [AttrDict](https://github.com/bcj/AttrDict),
+The idea for [Json](https://github.com/roymanigley/roys-pyxtension/blob/master/Json.py) module was inspired from [addict](https://github.com/mewwts/addict) and [AttrDict](https://github.com/bcj/AttrDict),
 but it has a better performance with lower memory consumption.
 
 ### Alternatives

@@ -1,4 +1,4 @@
-name: pyxtension
+name: roys-pyxtension
 channels:
   - defaults
 dependencies:
